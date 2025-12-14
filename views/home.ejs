@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogger App</title>
+    <link rel="stylesheet" href="style/home.css">
+</head>
+<body>
+  <div>
+    <h1>Welcome to Blogger App</h1>
+    <% if (locals.blogs.length === 0) { %>
+    <p>There are no blogs added yet</p>
+    <% } else { %>
+    <ol>
+      <% blogs.forEach(blog => { %>
+      <li>
+        <a href="/blog/<%= blog.id %>"><h2><%= blog.title %></h2></a>
+      </li>
+      <% }) %>
+    </ol>
+    <% } %>
+    <a href="/submit-blog">Add a new blog</a>
+  </div>
+</body>
+</html>

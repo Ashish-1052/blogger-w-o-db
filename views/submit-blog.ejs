@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Blog</title>
+  <link rel="stylesheet" href="style/submit-blog.css">
+</head>
+
+<body>
+  <% if (locals.title) { %>
+    <form action="/submit-blog" method="POST">
+      <% } else { %>
+        <form action="/edit-blog" method="POST">
+          <% } %>
+
+            <div class="form-input__container">
+              <label for="title">Title</label>
+              <% if (locals.title) { %>
+                <input type="text" id="title" name="title" value="<%= title %>">
+                <% } else { %>
+                  <input type="text" id="title" name="title">
+                  <% } %>
+            </div>
+
+            <div class="form-input__container">
+              <label for="content">Content</label>
+              <% if (locals.content) { %>
+                <textarea id="content" name="content" rows="10" cols="30"><%= content %></textarea>
+                <% } else { %>
+                  <textarea id="content" name="content" rows="10" cols="30"></textarea>
+                  <% } %>
+            </div>
+
+            <div class="form-input__container" style="display: none;">
+              <label for="id">Id</label>
+              <% if (locals.id) { %>
+                <input type="text" id="id" name="id" value="<%= id %>">
+                <% } else { %>
+                  <input type="text" id="id" name="id" value="<%= Date.now() %>">
+                  <% } %>
+            </div>
+
+            <button type="submit">Save</button>
+        </form>
+</body>
+
+</html>

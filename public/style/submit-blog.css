@@ -1,0 +1,25 @@
+.form-input__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input__container label {
+  margin: 5px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-input__container input, .form-input__container textarea {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  margin-top: 10px;
+}
