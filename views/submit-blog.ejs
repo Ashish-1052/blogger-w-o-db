@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Submit Blog</title>
-  <link rel="stylesheet" href="style/submit-blog.css">
+  <link rel="stylesheet" href="/style/submit-blog.css">
 </head>
 
 <body>
   <% if (locals.title) { %>
-    <form action="/submit-blog" method="POST">
+    <form action="/edit-blog" method="POST">
       <% } else { %>
-        <form action="/edit-blog" method="POST">
+        <form action="/submit-blog" method="POST">
           <% } %>
 
             <div class="form-input__container">
               <label for="title">Title</label>
               <% if (locals.title) { %>
-                <input type="text" id="title" name="title" value="<%= title %>">
+                <input type="text" id="title" name="title" value="<%= title %>" required>
                 <% } else { %>
-                  <input type="text" id="title" name="title">
+                  <input type="text" id="title" name="title" required>
                   <% } %>
             </div>
 
